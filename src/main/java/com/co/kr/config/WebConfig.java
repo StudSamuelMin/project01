@@ -12,12 +12,13 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 
-@Configuration
+@Configuration	
 public class WebConfig implements WebMvcConfigurer {
-	
+
 	@Bean
 	@Description("Thymeleaf template resolver serving HTML")
 	public ClassLoaderTemplateResolver templateResolver() {
+		
 		var templateResolver = new ClassLoaderTemplateResolver();
 		templateResolver.setPrefix("templates/");
 		templateResolver.setSuffix(".html");
@@ -32,7 +33,7 @@ public class WebConfig implements WebMvcConfigurer {
 	public SpringTemplateEngine templateEngine() {
 		var templateEngine = new SpringTemplateEngine();
 		templateEngine.setTemplateResolver(templateResolver());
-		templateEngine.addDialect(new LayoutDialect());
+		templateEngine.addDialect(new LayoutDialect()); //dependency 미리 설정해놓음
 		return templateEngine;
 	}
 	

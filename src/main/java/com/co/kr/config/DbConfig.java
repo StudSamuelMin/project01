@@ -8,10 +8,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+
+
 @Configuration
 @EnableTransactionManagement
 public class DbConfig {
-	
+
 	@Bean(destroyMethod="close")
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
@@ -24,10 +26,9 @@ public class DbConfig {
 		dataSource.setDefaultAutoCommit(false);
 		return dataSource;
 	}
-	
-	@Bean
-	public DataSourceTransactionManager transactionManager() {
-		return new DataSourceTransactionManager(dataSource());
-	}
 
+    @Bean
+    public DataSourceTransactionManager transactionManager() {
+        return new DataSourceTransactionManager(dataSource());
+    }
 }
