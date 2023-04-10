@@ -17,5 +17,4 @@ public class ErrorResponse {
 	private HttpStatus httpStatus;
 	private String resDate;
 	private String reqNo;
-	
 }

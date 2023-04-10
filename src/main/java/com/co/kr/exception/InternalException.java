@@ -12,7 +12,6 @@ import lombok.Setter;
 public class InternalException extends RuntimeException{
 	
 	private static final long serialVersionUID = -7457312605485052136L;
-	//serialVersionUID == '분산처리 환경에서 유일한Unique 클래스라는 것을 증명하기 위한 신분증'
 	
 	private Code code;
 	private Map<String, Object> map;
@@ -39,7 +38,6 @@ public class InternalException extends RuntimeException{
 	}
 	
 	
-	// 생성자
 	public static InternalException fire(Code code) {
 		return new InternalException(code);
 	}

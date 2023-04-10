@@ -52,7 +52,6 @@ public class RequestException extends RuntimeException {
 		this.reqNo = reqNo;
 	}
 	
-	//생성자 이용 객체생성
 	public static RequestException fire(Code code) {
 		return new RequestException(code);
 	}
@@ -72,5 +71,4 @@ public class RequestException extends RuntimeException {
 	public static RequestException fire(Code code, String errMsg, HttpStatus httpStatus, Exception exception, BindingResult result, String reqNo) {
 		return new RequestException(code);
 	}
-	
 }
