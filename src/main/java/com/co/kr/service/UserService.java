@@ -21,5 +21,5 @@ public interface UserService {
     
     public void mbUpdate(LoginDomain loginDomain); 
     
-    public void mbRemove(Map<String, String> map); 
+    public void mbRemove(Map<String, String> map);
 }
